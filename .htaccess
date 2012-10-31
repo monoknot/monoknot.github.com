@@ -1,0 +1,32 @@
+#
+# Kevin Fell
+# http://www.kevin-fell.co.uk/
+#
+
+AddDefaultCharset utf-8
+
+# Mime handlers
+AddType text/x-component htc
+
+# ETags
+FileETag MTime Size
+
+# Compression
+<IfModule mod_deflate.c>
+	SetOutputFilter DEFLATE
+	SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip dont-vary
+	SetEnvIfNoCase Request_URI \.(?:7z|exe|t?gz|zip|bz2|sit|rar)$ no-gzip dont-vary
+	SetEnvIfNoCase Request_URI \.(?:avi|mov|mp3|mp4|pdf|rm)$ no-gzip dont-vary
+</IfModule>
+
+# Cache control
+<IfModule mod_expires.c>
+	ExpiresActive	On
+	ExpiresDefault	"access plus 1 month"
+</IfModule>
+
+# Handle broken vary headers
+BrowserMatch "MSIE" brokenvary=1
+BrowserMatch "Mozilla/4.[0-9]{2}" brokenvary=1
+BrowserMatch "Opera" !brokenvary
+SetEnvIf brokenvary 1 force-no-vary

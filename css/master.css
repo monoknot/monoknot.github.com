@@ -1,0 +1,331 @@
+/**
+ * Kevin Fell
+ * http://www.kevin-fell.co.uk/
+ */
+
+/*
+YUI 3.5.1 (build 22)
+Copyright 2012 Yahoo! Inc. All rights reserved.
+Licensed under the BSD License.
+http://yuilibrary.com/license/
+*/
+body,div,dt,dd,li,h1,h2,h3,h4,h5,h6,form,fieldset,legend,input,textarea,th,td{margin:0;padding:0}
+table{border-collapse:collapse;border-spacing:0}
+fieldset,img{border:0}
+address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:normal}
+caption,th{text-align:left}
+q:before,q:after{content:''}
+abbr,acronym{border:0;font-variant:normal}
+sup{vertical-align:text-top}
+sub{vertical-align:text-bottom}
+input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit}
+input,textarea,select{*font-size:100%}
+legend{color:#000}
+/* Modified resets. */
+html{color:#000;background:#FFF;overflow-y:scroll !important}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:bold}
+p,blockquote,ul,ol,dl,table,pre{margin: 15px 0;padding:0}
+code{margin:0 2px;padding:2px 5px;border:1px solid #bbb;background-color:#dbdbdb}
+strong{font-style:normal;font-weight:bold}
+ol,ul{padding:0 0 0 30px;list-style:disc}
+blockquote{border-left:4px solid #bbb;padding:0 15px;color:#666}
+
+/* General. */
+body{font-family:Verdana,Helevtica,san-serif;font-size:14px;line-height:1.7em;color:#333}
+a,a:link,a:active,a:hover,a:visited{color:#0000ff;text-decoration:none}
+h1,h1 a:link,h1 a:active,h1 a:hover,h1 a:visited,h2,h2 a:link,h2 a:active,h2 a:hover,h2 a:visited,h3,h3 a:link,h3 a:active,h3 a:hover,h3 a:visited,h4,h4 a:link,h4 a:active,h4 a:hover,h4 a:visited,h5,h1 a:link,h5 a:active,h5 a:hover,h5 a:visited,h6,h6 a:link,h6 a:active,h6 a:hover,h6 a:visited{margin:20px 0 10px;font-weight:normal;line-height:1.4em;letter-spacing:1px;color:#333}
+h1{font-size:28px}
+h2{font-size:24px}
+h3{font-size:22px}
+h4{font-size:20px}
+h5{font-size:18px}
+h6{font-size:16px}
+input,textarea{display:block;padding:5px 7px;border:1px solid #ccc;background:none repeat scroll 0 0 #e7e7e7}
+textarea{resize:none}
+.hidden{display:none}
+.fl{float:left}
+.fr{float:right}
+.clear{clear:both}
+.container{margin:0 auto;width:960px;overflow:hidden}
+
+#contact input[type=text],#contact textarea{width:60%;margin-bottom:15px}
+
+/* Border radius. */
+.radius,a.button,input[type=button],input[type=submit],.__tipsy-inner{behavior:url(/js/PIE.htc);border-radius:6px;-moz-border-radius:6px;-webkit-border-radius:6px;-khtml-border-radius:6px}
+
+/* Gradiants. Used background image here due to mix of rounded corners and gradiants in IE. */
+.gradiant{background:#d7d7d7 url(/images/gradiant.png) repeat-x 0 0}
+a.button,input[type=button],input[type=submit]{background:#d7d7d7 url(/images/gradiant.png) repeat-x center 0}
+a.buttonDown,a.button:active,input[type=button]:active,intput[type=submit]:active{top:1px;left:1px;background:#f8f8f8 url(/images/gradiant_active.png) repeat-x center 0}
+/*
+.gradiant{behavior:url(/js/PIE.htc);background:#d7d7d7;background:-webkit-gradient(linear,0 0,0 100%,from(#fff)to(#c7c7c7));background:-webkit-linear-gradient(#fff,#c7c7c7);background:-moz-linear-gradient(#fff,#c7c7c7);background:-ms-linear-gradient(#fff,#c7c7c7);-ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff',EndColorStr='#c7c7c7')";background:-o-linear-gradient(#fff,#c7c7c7);background:linear-gradient(#fff,#c7c7c7);-pie-background:linear-gradient(#fff,#c7c7c7)}
+a.button,input[type=button],input[type=submit]{behavior:url(/js/PIE.htc);background:#d7d7d7;background:-webkit-gradient(linear,0 0,0 100%,from(#fff)to(#c7c7c7));background:-webkit-linear-gradient(#fff,#c7c7c7);background:-moz-linear-gradient(#fff,#c7c7c7);background:-ms-linear-gradient(#fff,#c7c7c7);-ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff',EndColorStr='#c7c7c7')";background:-o-linear-gradient(#fff,#c7c7c7);background:linear-gradient(#fff,#c7c7c7);-pie-background:linear-gradient(#fff,#c7c7c7)}
+a.buttonDown,a.button:active,input[type=button]:active,intput[type=submit]:active{top:1px;left:1px;background:#f8f8f8;background:-webkit-gradient(linear,left top,left bottom,from(#fff)to(#e8e8e8));background:-moz-linear-gradient(#fff,#e8e8e8);background:-moz-linear-gradient(#fff,#e8e8e8);background:-ms-linear-gradient(#fff,#e8e8e8);-ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff',EndColorStr='#e8e8e8')";background:-o-linear-gradient(#fff,#e8e8e8);background:linear-gradient(#fff,#e8e8e8);-pie-background:linear-gradient(#fff,#e8e8e8)}
+*/
+a.button{display:inline-block;outline:none;padding:4px 12px;cursor:pointer;font-size:11px;text-align:center;text-transform:uppercase;color:#000;border:solid 1px #e1e1e1}
+
+/* Sticky footer. */
+html,body,#contentWithHeaderContainer{height:100%}
+body > #contentWithHeaderContainer{position:relative;height:auto;min-height:100%;background:#e2e2e2 url(/images/content.png) repeat center 0}
+#contentWithHeader{position:relative;padding-bottom:88px;z-index:10}
+#footerContainer{clear:both;position:relative;z-index:10;margin-top:-88px}
+
+/* Header. */
+#headerContainer{height:114px;background:#45474d url(/images/header.png) no-repeat center 0}
+#header > #logo{float:left;margin:18px 20px 0 0}
+#header > #title{float:left;position:relative;top:32px;width:220px}
+#header > #title h1,#header > #title h2{margin:0;color:#fff}
+
+/* Menu. */
+/* Overflow required for IE7. */
+#menu{float:right;position:relative;height:74px;margin-top:40px;z-index:20;overflow:hidden !important}
+#menu ul{float:right;list-style:none}
+#menu ul li{float:left;margin:0 3px;font-size:14px}
+#menu ul li a{padding:15px 15px 42px;color:#fff;behavior:url(/js/PIE.htc);border-radius:6px 6px 0 0;-moz-border-radius:6px 6px 0 0;-webkit-border-radius:6px 6px 0 0;-khtml-border-radius:6px 6px 0 0}
+#menu ul li a.active{background-color:#323a59}
+#menu ul li a:hover{background-color:#172041}
+
+/* Content. */
+#contentContainer > #headerTail{height:50px;display:block;background:transparent url(/images/header_tail.png) no-repeat center -2px}
+/*#content img{visibility:hidden} /* Use krioImageLoader to bring them in when ready. */
+#content{position:relative;top:-26px}
+#content > #contentWithSidebar{width:662px;margin-right:10px}
+#content > #contentWithoutSidebar{width:100%}
+#content > #contentSidebar{float:left;width:278px}
+#content .title{clear:both;display:block}
+#content h2{border-bottom:1px solid #ccc}
+
+/* Breadcrumbs. */
+#content > #breadcrumbs{list-style:none;margin:0;padding:0}
+#content > #breadcrumbs li{float:left}
+
+.header{display:block;padding:8px;font-size:12px;text-transform:uppercase;color:#666;border:1px solid #ddd}
+.forkme{position:absolute;right:0;width:135px;height:135px;background:transparent url(/images/forkme.png) no-repeat center 0}
+.calenderIcon{margin-right:6px;padding-left:18px;background:url(/images/sprite_master.png) no-repeat scroll 0 -82px transparent}
+.pencilIcon{margin-right:6px;padding-left:18px;background:url(/images/sprite_master.png) no-repeat scroll 0 -99px transparent}
+.zoomIcon{position:absolute;width:64px;height:64px;background:url(/images/sprite_master.png) no-repeat 0 -280px}
+.postPreviewContent{margin:10px}
+.postPreviewContent p{margin:10px 0}
+.postPreviewContent img{width:642px;height:250px}
+
+ul.projectFilters{padding:0}
+.projectFilters li{float:left;position:relative;margin-right:5px;list-style:none}
+#projectContent{clear:both;position:relative;top:20px}
+.projects{list-style:none;overflow:hidden}
+.projects{padding:0}
+.projects li{float:left;margin:0 16px;width:145px;height:180px;text-align:center}
+
+/* Footer. */
+#footerContainer{height:40px;padding:24px 0;color:#fff;background:#211d1e url(/images/footer.png) repeat center 0}
+#footer p{margin:14px 0;font-size:18px}
+#footer ul{margin:6px 0}
+#footer ul li{display:inline}
+#footer a.sprite{float:left;margin-right:6px;width:32px;height:32px;background-image:url(/images/footer_sprite.png);background-repeat:no-repeat}
+#footer a#twitterIcon{background-position:-42px -42px}
+#footer a#twitterIcon:hover{background-position:-5px -42px}
+#footer a#rssIcon{background-position:-42px -79px}
+#footer a#rssIcon:hover{background-position:-5px -79px}
+#footer a#xhtmlIcon{width:88px;background-position:-5px -151px}
+#footer a#xhtmlIcon:hover{width:88px;background-position:-5px -115px}
+#footer a#gitHubIcon{width:32px;background-position:-78px -42px}
+#footer a#gitHubIcon:hover{width:32px;background-position:-78px -5px}
+#footer a#jQueryIcon{width:130px;background-position:-5px -224px}
+#footer a#jQueryIcon:hover{width:130px;background-position:-5px -187px}
+
+/* Hide cufon elements until we're ready to show them. */
+h1,h2,h3,h4,h5,h6,.cufon,#menu{/*visibility:hidden*/}
+
+/* jQuery plugin: Tipsy. */
+.tipsy{position:absolute;padding:5px;font-size:10px;z-index:10000}
+.tipsy-inner{max-width:200px;padding:3px 8px 5px;text-align:center;color:#fff;background-color:#000}
+.tipsy-arrow{position:absolute;width:0;height:0;border:5px solid}
+.tipsy-arrow-n{border-bottom-color:#000}
+.tipsy-arrow-s{border-top-color:#000}
+.tipsy-arrow-e{border-left-color:#000}
+.tipsy-arrow-w{border-right-color:#000}
+.tipsy-n .tipsy-arrow,.tipsy-nw .tipsy-arrow,.tipsy-ne .tipsy-arrow{top:0;border-top:none}
+.tipsy-s .tipsy-arrow,.tipsy-sw .tipsy-arrow,.tipsy-se .tipsy-arrow{bottom:0;border-bottom:none}
+.tipsy-n .tipsy-arrow,.tipsy-s .tipsy-arrow{left:50%;margin-left:-5px}
+.tipsy-nw .tipsy-arrow,.tipsy-sw .tipsy-arrow{left:10px}
+.tipsy-ne .tipsy-arrow,.tipsy-se .tipsy-arrow{right:10px}
+.tipsy-e .tipsy-arrow,.tipsy-w .tipsy-arrow{top:50%;margin-top:-5px}
+.tipsy-e .tipsy-arrow{right:0;border-right:none}
+.tipsy-w .tipsy-arrow{left:0;border-left:none}
+
+/* jQuery plugin: ToTop.*/
+#toTop{z-index:100;display:none;position:fixed;bottom:17px;right:10px;width:51px;height:51px;overflow:hidden;border:none;text-indent:-999px;text-decoration:none;background:url(/images/sprite_master.png) no-repeat 0 -487px}
+#toTopHover{background:url(/images/sprite_master.png) no-repeat 0 -543px;float:left;opacity:0;filter:alpha(opacity=0)}
+#toTop:active,#toTop:focus{outline:none}
+
+/* The Nivo Slider styles */
+.nivoSlider{position:relative;margin:32px auto 20px;width:960px;height:363px;background:#000;overflow:hidden}
+.nivoSlider img{position:absolute;top:0px;left:0px}
+
+.nivoSlider a.nivo-imageLink {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	border:0;
+	padding:0;
+	margin:0;
+	z-index:60;
+	display:none;
+}
+/* The slices in the Slider */
+.nivo-slice {
+	display:block;
+	position:absolute;
+	z-index:50;
+	height:100%;
+}
+.nivo-box {
+	display:block;
+	position:absolute;
+	z-index:5;
+}
+/* Caption styles */
+.nivo-caption {
+
+	display:none;
+	behavior:url(/js/pie.htc);
+	position:absolute;
+	left:20px;
+	bottom:20px;
+	width: 450px;
+	padding:12px;
+	color:#999;
+	z-index:89;
+	background:url("/images/footer.png") repeat scroll center 0 #211D1E;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-khtml-border-radius: 6px;
+	font-size:12px;
+	zoom:1;
+}
+
+.nivo-caption.right {
+/*	right: 0;*/
+}
+
+.nivo-caption .title
+{
+	color: #fff;
+	font-size: 16px;
+	/*letter-spacing: 2px;*/
+	font-weight:normal;
+	line-height:1.4 em;
+	margin-bottom:10px;
+}
+
+.nivo-caption .content
+{
+	margin:10px 0;
+	line-height: 1.5em;
+}
+
+/*.nivo-caption a{display:inline !important;font-weight:bold;color:#000}*/
+/*.nivo-html-caption{display:block}*/
+.nivo-directionNav{display:none}
+
+.nivo-directionNav a {
+	position:relative;
+	top:120px;
+	z-index:99;
+	cursor:pointer;
+	width: 71px;
+	height: 91px;
+	display: block;
+}
+.nivo-directionNav a.nivo-prevNav {
+	text-indent: -9999px;
+	left: 25px;
+}
+.nivo-directionNav a.nivo-nextNav {
+/*	background: transparent url('../images/btnNext.png') no-repeat center 15px;*/
+	text-indent: -9999px;
+	left: 865px;
+	top: 42px;
+}
+/*
+.nivo-prevNav:active {
+	background: transparent url('../images/left_slide_nav_dark.png') no-repeat center 15px;
+}
+.nivo-nextNav:active {
+	background: transparent url('../images/right_slide_nav_dark.png') no-repeat center 15px;
+}
+*/
+/* Control nav styles (e.g. 1,2,3...) */
+.nivo-controlNav
+{
+	float: none;
+	top:333px;
+	right: 15px;
+	width:auto;
+	padding: 13px 0 0 10px;
+	text-align: center;
+	background:transparent;
+	z-index:99;
+}
+
+#slider_wrapper .nivo-controlNav
+{
+	width: 950px;
+}
+
+.nivoslide .nivo-controlNav
+{
+	top: 0;
+	width: auto;
+	left: 0;
+}
+
+.nivo-controlNav a {
+	position:relative;
+	z-index:99;
+	cursor:pointer;
+	width: 13px;
+	height:13px;
+	background:url(../images/sprite_master.png) no-repeat 0 -247px;
+	display: block;
+	float: left;
+	text-indent: -9999px;
+	margin: 0 8px 0 0;
+	opacity: 1;
+}
+.nivo-controlNav a:hover, .nivo-controlNav a.active {
+	background-position:0 -264px;
+}
+
+.nivo-controlNav {
+	position:absolute;
+	bottom: 0px; /* Put the nav below the slider */
+}
+
+.nivo-controlNav img {
+	display:inline; /* Unhide the thumbnails */
+	position:relative;
+	margin-right:10px;
+}
+
+.tweet,
+.query {
+	color: #085258;
+}
+
+	.tweet_list {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	
+		.tweet_list li {
+			list-style-type: none;
+			padding:36px 0 0px;
+    background: url(/images/sprite_master.png) no-repeat scroll 100px -596px transparent;
+}
+
+
+.tweet_list li:first-child {padding:0;background:none;}

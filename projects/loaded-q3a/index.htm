@@ -1,0 +1,256 @@
+
+
+
+	
+
+
+
+	
+		
+	
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=8; IE=edge" />
+	<title>Kevin Fell - Projects - Loaded Q3A</title>
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<link rel="stylesheet" href="/css/master.css" type="text/css" media="all" />
+	<!--[if lte IE 7]><link rel="stylesheet" href="/css/master_lte_ie7.css" type="text/css" media="all" /><![endif]-->
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml" />
+</head>
+	<body>
+		<div id="contentWithHeaderContainer">
+	<div id="contentWithHeader">
+		<div id="headerContainer">
+	<div id="header" class="container">
+		<img id="logo" width="118" height="80" class="fl" src="/images/logo.png" alt="Logo" />
+		<div id="title">
+			<h1>Kevin Fell</h1>
+			<h2>Development Journal</h2>
+		</div>
+		<div id="menu">
+			<ul>
+
+				<li><a href="/">Home</a></li>
+				<li><a href="/projects/" class="active">Projects</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+		<div id="contentContainer">
+			<div id="headerTail">
+				
+					<a href="https://github.com/monoknot/loaded-q3a/" class="forkme">&nbsp;</a>
+				
+			</div>
+			<div id="content" class="container">
+				
+	<ul id="breadcrumbs">
+		<li><a href="/">Home</a></li>
+		
+			<li>&nbsp;&raquo; <a href="/projects/">Projects</a></li>
+			<li>&nbsp;&raquo; Loaded Q3A</li>
+		
+	</ul>
+
+
+				
+					<div id="contentWithoutSidebar" class="clear fl"><h1>Loaded Q3A</h1>
+
+<ul>
+<li><strong>Version</strong>: 2.0 RC1</li>
+<li><strong>Licence:</strong> <a href="http://www.gnu.org/licenses/gpl-2.0.html">GPL Version 2</a></li>
+<li><strong>Author:</strong> <a href="http://www.kevin-fell.co.uk/">Kevin Fell</a></li>
+<li><strong>Copyright:</strong> (C) 1999-2012 Kevin Fell</li>
+</ul>
+
+
+<h2>Introduction</h2>
+
+<!--[excerpt]-->
+
+
+<p>Loaded Q3A is a server and client modification for Quake 3 Arena which
+adds a highly customisable layer of server side administration while
+staying true to the original game play.</p>
+
+<!--[/excerpt]-->
+
+
+<p>The main additions are as follows:</p>
+
+<ul>
+<li>Enhanced spectator modes to ensure you don't miss the action.</li>
+<li>Stylish "Message of the Day" to communicate information to players.</li>
+<li>Sophisticated map rotation system which includes ideal head counts
+and custom configuration files per map.</li>
+<li>High scoring system to record the best players to grace your server.</li>
+<li>Respawn protection shield to eradicate spawn spot opportunists.</li>
+<li>Anti-camp options to keep players on the move.</li>
+<li>Offhand grappling hook to reach the unreachable.</li>
+<li>Real-time item management system.</li>
+<li>Speed and damage customisation, complete with client-side prediction.</li>
+<li>Extended bot AI to ensure they understand the new features.</li>
+</ul>
+
+
+<p>This is a complete rewrite of the original Loaded Q3A source code which
+adds compatibility with the final point release.</p>
+
+<h2>Installation</h2>
+
+<p>A full retail version of Quake 3 is required to play this modification
+patched to the 1.32 point release.</p>
+
+<p>If for some reason you don't already own a copy, you can purchase it
+online from <a href="http://store.steampowered.com/app/2200">Steam</a>. The 1.32
+point release can be found on the
+<a href="ftp://ftp.idsoftware.com/idstuff/quake3/">Id Software</a> ftp server.</p>
+
+<p>Extract the content of this archive to your Quake 3 installation. You
+can run it either by selecting "Loaded Q3A" from the in-game "Mods"
+menu or by using the following command line:</p>
+
+<blockquote><p><code>quake3 +set fs_game loaded +map q3dm1</code></p></blockquote>
+
+<p>If you prefer to run the server DLL over the QVM you can use the
+following command line:</p>
+
+<blockquote><p><code>quake3 +set fs_game loaded + set sv_pure 0 + set vm_game 0 +map q3dm1</code></p></blockquote>
+
+<p>Loaded Q3A has been tested with <a href="http://ioquake3.org/">ioQuake3</a> and I
+recommend you use this over the official Id releases.</p>
+
+<p>There is a very small addition to the DLL version of Loaded Q3A which is
+detailed later this this document.</p>
+
+<p><strong>If you are upgrading from a previous release of Loaded Q3A you must
+delete the "loaded" directory prior to installing this version.</strong></p>
+
+<h2>Setup</h2>
+
+<p>Loaded Q3A is packed full of goodies, all of which can be individually
+configured and tuned to your taste. Please refer to
+"readme-config.txt" for a description of the additional functionality.</p>
+
+<h2>QVM vs DLL</h2>
+
+<p>This distribution includes compiled QVM's for the server, client and
+ui modules.</p>
+
+<p>The server DLL has been included for those of you who want to record
+dates against the high score entries since the Quake 3 engine provides
+no means to query the system date within it's virtual machine environment.
+Its identical in every other way.</p>
+
+<p>The other modules offer little benefit in DLL format on modern day
+computers and are therefore not included in this distribution, they
+can however be compiled from source if for some reason you have a
+compelling reason to run them.</p>
+
+<h2>Source Code</h2>
+
+<p>The source code is available under the terms of the GNU GPL Version 2
+open source licence and can be downloaded from my
+<a href="https://github.com/monoknot/loaded-q3a">GitHub repository</a>.</p>
+
+<p>The package includes project files to build everything in MSVC++ 2010.
+Each project is setup to compile using the "Windows7.1SDK" platform
+toolset, you can either update your Windows platform SDK or change the
+platform toolset with in each projects properties menu.</p>
+
+<p>The main changes can be found in the following files:</p>
+
+<blockquote><p>Server</p>
+
+<ul>
+<li>g_lq3a.c</li>
+<li>g_lq3a.h</li>
+</ul>
+
+
+<p>Client</p>
+
+<ul>
+<li>cg_lq3a.c</li>
+<li>cg_lq3a.h</li>
+</ul>
+
+
+<p>Shared</p>
+
+<ul>
+<li>bg_lq3a.c</li>
+<li>bg_lq3a.h</li>
+</ul>
+</blockquote>
+
+<p>Changes to the original source code have been clearly tagged with "LQ3A",
+an accompanying description is also provided along side changes that
+warrant an explanation.</p>
+
+<p>There are no changes to the UI module, its has only been included to
+prevent Quake 3 kicking you out the game with a "baseq3-lq3a" miss
+match error.</p>
+
+<p>Additional Team Arena support exists in the source code. While these
+additions are not compiled in the release it should leave the door open
+for anyone who wishes to add them in. My intention was to have a single
+release which would support both the standard game and the Team Arena
+mission pack by simply copying the mod content to the "missionpack"
+directory.</p>
+
+<p>The game sets the level.bMissionPack variable to qtrue when the mission
+pack content is detected, this is communicated to the client module and
+subsequently sets cgs.bMissionPack. With a bit of effort, the Team Arena
+code could then be integrated into the standard code base to create a
+single release to supports both games.</p>
+
+<h2>Licence</h2>
+
+<p>This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.</p>
+
+<p>This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.</p>
+
+<p>You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+MA 02110-1301, USA.</p>
+
+<p>Quake III Arena (C) 1999-2005 Id Software, Inc. All Rights Reserved.</p>
+</div>
+				
+			</div>
+		</div>
+	</div>
+</div>
+		<div id="footerContainer">
+	<div id="footer" class="container">
+		<p class="fl cufon">&copy; Kevin Fell 2012</p>
+		<ul class="fr">
+			<li><a id="twitterIcon" class="sprite" target="_blank" href="http://twitter.com/monoknot" title="Follow me on Twitter"></a></li>
+			<li><a id="rssIcon" class="sprite" href="/atom.xml" title="Subscribe to my RSS feed"></a></li>
+			<li><a id="xhtmlIcon" class="sprite" target="_blank" href="http://validator.w3.org/check?uri=referer" title="XHTML compliant"></a></li>
+			<li><a id="jQueryIcon" class="sprite" target="_blank" href="http://jquery.com" title="Powered by jQuery"></a></li>
+		</ul>
+	</div>
+</div>
+<!--[if IE]><script type="text/javascript" async="true" src="/js/master.js"></script><![endif]-->
+<!--[if !IE]>-->
+	<script type="text/javascript">
+		var node=document.createElement('script');
+		node.type='text/javascript';
+		node.async=true;
+		node.src='/js/master.js';
+		document.getElementsByTagName('head')[0].appendChild(node);
+	</script>
+<!--<![endif]-->
+	</body>
+</html>
